@@ -10,7 +10,12 @@ public class BugApp {
     private static int myTid;
     private static Handler mHandler;
 
-
+    /**
+     *
+     * @param cx  
+     * @param handler  new Handler()
+     * @param tid   android.os.Process.myTid()
+     */
     public static void init(Context cx, Handler handler, int tid) {
         mc = cx;
         mHandler = handler;
