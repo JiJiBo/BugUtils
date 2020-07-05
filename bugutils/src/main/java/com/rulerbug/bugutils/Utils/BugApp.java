@@ -12,7 +12,7 @@ public class BugApp {
 
     /**
      *
-     * @param cx  
+     * @param cx
      * @param handler  new Handler()
      * @param tid   android.os.Process.myTid()
      */
