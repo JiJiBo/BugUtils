@@ -138,7 +138,7 @@ public class BugOkHttpUtils {
      * @param body 数据
      * @return  借口返回的数据
      */
-    public static Response postHttp(String url, RequestBody body) {
+    public static Response postHttp(String url, FormBody body) {
         try {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
@@ -159,7 +159,7 @@ public class BugOkHttpUtils {
      * @param body  数据
      * @param callbcak 回调接口
      */
-    public static void postHttp(String url, RequestBody body, Callback callbcak) {
+    public static void postHttp(String url, FormBody body, Callback callbcak) {
         try {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
@@ -178,7 +178,7 @@ public class BugOkHttpUtils {
      * @param body  请求参数
      * @return  字符串
      */
-    public static String postString(String url, RequestBody body) {
+    public static String postString(String url, FormBody body) {
         try {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
@@ -199,7 +199,7 @@ public class BugOkHttpUtils {
      * @param body  请求参数
      * @param callbcak  回调接口
      */
-    public static void postString(String url, RequestBody body, Callback callbcak) {
+    public static void postString(String url, FormBody body, Callback callbcak) {
         try {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
