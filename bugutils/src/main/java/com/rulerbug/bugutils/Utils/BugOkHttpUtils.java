@@ -324,7 +324,7 @@ public class BugOkHttpUtils {
     /**
      * 通过list里的的Bean 普通post請求获得FormBody
      */
-    public static FormBody getRequestBody(List<BugOkHttpDataBean> dataList) {
+    public static FormBody getFormBody(List<BugOkHttpDataBean> dataList) {
         FormBody.Builder builder = new FormBody.Builder();
         if (dataList != null && dataList.size() > 0) {
             for (BugOkHttpDataBean b : dataList) {
@@ -337,7 +337,7 @@ public class BugOkHttpUtils {
     /**
      * 通过封装的Bean 普通post請求获得FormBody
      */
-    public static FormBody getRequestBody(BugOkHttpDataList dataList) {
+    public static FormBody getFormBody(BugOkHttpDataList dataList) {
         FormBody.Builder builder = new FormBody.Builder();
         if (dataList != null && dataList.dataList != null && dataList.dataList.size() > 0) {
             for (BugOkHttpDataBean b : dataList.dataList) {
