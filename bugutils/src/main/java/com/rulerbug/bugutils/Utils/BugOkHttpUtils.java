@@ -112,6 +112,22 @@ public class BugOkHttpUtils {
         }
         return null;
     }
+    /**
+     *
+     * @param url  网址
+     * @return  借口返回的数据已字符串解析
+     */
+    public static void getString(String url,Callback callbcak) {
+        try {
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url(url)
+                    .build();
+            client.newCall(request).enqueue(callbcak);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      *
