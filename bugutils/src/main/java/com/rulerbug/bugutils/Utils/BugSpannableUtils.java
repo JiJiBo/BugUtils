@@ -21,12 +21,14 @@ public class BugSpannableUtils {
     }
 
     public static SpannableStringBuilder setBolder(String text, int start, int end, int t) {
+        //        t=Typeface.BOLD
         SpannableStringBuilder ssb = new SpannableStringBuilder(text);
         ssb.setSpan(new StyleSpan(t), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return ssb;
     }
 
     public static SpannableStringBuilder setBolder(SpannableStringBuilder text, int start, int end, int t) {
+//        t=Typeface.BOLD
         SpannableStringBuilder ssb = new SpannableStringBuilder(text);
         ssb.setSpan(new StyleSpan(t), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return ssb;
