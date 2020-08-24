@@ -1,6 +1,7 @@
 package com.rulerbug.bugutils.Utils;
 
 import android.util.Log;
+import com.google.gson.Gson;
 
 public class BugLogUtils {
     public static final int v = 10;
@@ -19,6 +20,10 @@ public class BugLogUtils {
         }
     }
 
+    public static void v(Object msg) {
+        v(new Gson().toJson(msg));
+    }
+
     public static void setLevel(int level) {
         BugLogUtils.level = level;
     }
@@ -29,10 +34,18 @@ public class BugLogUtils {
         }
     }
 
+    public static void d(Object msg) {
+        d(new Gson().toJson(msg));
+    }
+
     public static void i(String msg) {
         if (level <= i) {
             Log.e("一条i级message", msg);
         }
+    }
+
+    public static void i(Object msg) {
+        i(new Gson().toJson(msg));
     }
 
     public static void w(String msg) {
@@ -41,9 +54,18 @@ public class BugLogUtils {
         }
     }
 
+    public static void w(Object msg) {
+        w(new Gson().toJson(msg));
+    }
+
     public static void e(String msg) {
         if (level <= e) {
             Log.e("一条e级message", msg);
         }
     }
+
+    public static void e(Object msg) {
+        e(new Gson().toJson(msg));
+    }
+
 }
