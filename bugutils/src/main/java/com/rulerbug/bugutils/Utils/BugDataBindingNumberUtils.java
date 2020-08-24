@@ -38,7 +38,7 @@ public class BugDataBindingNumberUtils {
         return num + "";
     }
 
-    public static double strToFloat(String num) {
+    public static Float strToFloat(String num) {
         return Float.valueOf(num);
     }
 
