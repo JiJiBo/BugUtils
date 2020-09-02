@@ -15,4 +15,12 @@ public class BugVersionUtils {
     public static String getAppVersionName() {
         return getPackageInfo().versionName;
     }
+
+    public static long getAppVersionCode() {
+        return getPackageInfo().getLongVersionCode();
+    }
+
+    public static String getAppVersion() {
+        return getAppVersionName() + "," + getAppVersionCode();
+    }
 }
