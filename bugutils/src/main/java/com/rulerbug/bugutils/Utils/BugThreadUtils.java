@@ -11,11 +11,16 @@ public class BugThreadUtils {
         }
         return false;
     }
+
     public static void RunOnUIThread(Runnable r) {
         if (isRunOnUIThread()) {
             r.run();
         } else {
             getHandler().post(r);
         }
+    }
+
+    public static void RunOnUIThread(Runnable r, long delay) {
+        getHandler().postDelayed(r, delay);
     }
 }
