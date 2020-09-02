@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+
 import androidx.core.app.ActivityCompat;
 
 import java.io.File;
@@ -13,13 +14,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class BugBitmapUtils {  //保存图片到本地
-    public static String saveBitmap(Bitmap bmp, Activity ma, String dirPath) {  // 首先保存图片的路径
+    public static String saveBitmap(Bitmap bmp, Activity ma, String dirPath, String fileName) {  // 首先保存图片的路径
 
         File appDir = new File(dirPath);
         if (!appDir.exists()) {
             appDir.mkdir();
         }
-        String fileName = System.currentTimeMillis() + ".png";
+
         File file = new File(appDir, fileName);
         try {
             ActivityCompat.requestPermissions(ma, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
@@ -43,7 +44,9 @@ public class BugBitmapUtils {  //保存图片到本地
     }
 
     public static String saveBitmap(Bitmap bmp, Activity ma) {
-        return saveBitmap(bmp, ma);
+        String fileName = System.currentTimeMillis() + ".png";
+        return saveBitmap(bmp, ma, BugDirUtils.getDirPathByDirName("bug"), fileName);
     }
+
 
 }
