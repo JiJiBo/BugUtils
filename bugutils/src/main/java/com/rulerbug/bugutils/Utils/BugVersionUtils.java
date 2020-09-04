@@ -21,6 +21,6 @@ public class BugVersionUtils {
     }
 
     public static String getAppVersion() {
-        return getAppVersionName() + "," + getAppVersionCode();
+        return getAppVersionName() + "." + getAppVersionCode();
     }
 }
