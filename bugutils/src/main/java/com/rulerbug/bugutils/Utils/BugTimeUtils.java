@@ -47,6 +47,24 @@ public class BugTimeUtils {
         String str = hs + ":" + ms + ":" + sss;
         return str;
     }
+    public static String TimeToStringByFen(long time) {
+        String hs, ms, sss;
+        long ss = time % 60;
+
+        long mm = (time - ss) / 60 % 60;
+        long hh = (time - ss - mm * 60) / 3600;
+        sss = ss + "";
+        ms = mm + "";
+        hs = hh + "";
+        if (hh / 10 == 0)
+            hs = "0" + hs;
+        if (mm / 10 == 0)
+            ms = "0" + ms;
+        if (ss / 10 == 0)
+            sss = "0" + ss;
+        String str = ms + ":" + sss;
+        return str;
+    }
 
     public static String TimeToStringByDay(long time) {
         String ds = get_day(time) + "";
