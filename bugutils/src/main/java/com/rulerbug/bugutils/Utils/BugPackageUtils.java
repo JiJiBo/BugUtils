@@ -1,11 +1,18 @@
 package com.rulerbug.bugutils.Utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.net.Uri;
+import android.os.Build;
+import android.text.TextUtils;
+
+import androidx.core.content.FileProvider;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -84,4 +91,28 @@ public class BugPackageUtils {
         return str.toString();
     }
 
+    /**
+     * @param context 全局context
+     * @param apkPath app文件路径
+     * @param aName   FileProvider的作者名字
+     */
+    public static void install(Context context, String apkPath, String aName) {
+        if (context == null || TextUtils.isEmpty(apkPath)) {
+            return;
+        }
+        File file = new File(apkPath);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        //判读版本是否在7.0以上
+        if (Build.VERSION.SDK_INT >= 24) {
+            //provider authorities
+            Uri apkUri = FileProvider.getUriForFile(context, aName, file);
+            //Granting Temporary Permissions to a URI
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+        } else {
+            intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+        }
+        context.startActivity(intent);
+
+    }
 }
