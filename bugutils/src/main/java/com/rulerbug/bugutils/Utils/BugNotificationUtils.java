@@ -8,7 +8,6 @@ import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
 
-import com.zcf.tingba.R;
 
 public class BugNotificationUtils {
 
@@ -22,7 +21,7 @@ public class BugNotificationUtils {
     }
 
     private static NotificationCompat.Builder getNotificationBuilder(Context mContext, String title
-            , String content, String channelId) {
+            , String content, String channelId, int smallicon) {
         //大于8.0
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //id随便指定
@@ -47,7 +46,7 @@ public class BugNotificationUtils {
 
         return new NotificationCompat.Builder(mContext, channelId).setAutoCancel(true)
                 .setContentTitle(title)
-                .setContentText(content).setSmallIcon(R.mipmap.ic_launcher);
+                .setContentText(content).setSmallIcon(smallicon);
 
     }
 
@@ -59,10 +58,10 @@ public class BugNotificationUtils {
      * @param progress
      * @param maxProgress
      */
-    public static void showNotificationProgress(Context mContext, String title
+    public static void showNotificationProgress(Context mContext, int smallicon, String title
             , String content, int manageId, String channelId
             , int progress, int maxProgress) {
-        final NotificationCompat.Builder builder = getNotificationBuilder(mContext, title, content, channelId);
+        final NotificationCompat.Builder builder = getNotificationBuilder(mContext, title, content, channelId, smallicon);
        /* Intent intent = new Intent(this, SecondeActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         builder.setContentIntent(pendingIntent);*/
@@ -74,14 +73,14 @@ public class BugNotificationUtils {
     }
 
 
-    private static void showNotificationProgressApkDown(Context mContext
+    private static void showNotificationProgressApkDown(Context mContext, int smallicon
             , int progress) {
-        final NotificationCompat.Builder builder = getNotificationBuilder(mContext, "正在下载", "悠游云驾", "yunjia");
+        final NotificationCompat.Builder builder = getNotificationBuilder(mContext, "正在下载", "悠游云驾", "yunjia", smallicon);
         builder.setOnlyAlertOnce(true);
         builder.setDefaults(Notification.FLAG_ONLY_ALERT_ONCE);
         builder.setProgress(100, progress, false);
         builder.setWhen(System.currentTimeMillis());
-        getManager(mContext).notify(R.mipmap.ic_launcher, builder.build());
+        getManager(mContext).notify(smallicon, builder.build());
     }
 
     public static void cancleNotification(Context mContext, int manageId) {
