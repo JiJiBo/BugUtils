@@ -76,4 +76,21 @@ public class BugCacheUtils {
         }
         return null;
     }
+
+    public static void delCache(String name, String dirpath) {
+        if (TextUtils.isEmpty(name)) {
+            return;
+        }
+        String path = dirpath + File.separator + name;
+        File file = new File(path);
+
+        BugLogUtils.e("ishave" + file.exists());
+        boolean delete = file.delete();
+        BugLogUtils.e("del" + delete);
+        BugLogUtils.e(" after del  ishave" + file.exists());
+    }
+
+    public static void delCache(String name) {
+        delCache(name, absolutePath);
+    }
 }
