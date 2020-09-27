@@ -2,6 +2,7 @@ package com.rulerbug.bugutils.Utils;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 
 public class BugVersionUtils {
     public static PackageInfo getPackageInfo() {
@@ -17,7 +18,26 @@ public class BugVersionUtils {
     }
 
     public static long getAppVersionCode() {
-        return getPackageInfo().getLongVersionCode();
+        long version = 0;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+            PackageManager packageManager = BugApp.getContext().getPackageManager();
+            try {
+                PackageInfo packageInfo = packageManager.getPackageInfo( BugApp.getContext().getPackageName(), 0);
+                version = packageInfo.versionCode;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            PackageManager packageManager =  BugApp.getContext().getPackageManager();
+            try {
+                PackageInfo packageInfo = packageManager.getPackageInfo( BugApp.getContext().getPackageName(), 0);
+                version = packageInfo.getLongVersionCode();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return version;
     }
 
     public static String getAppVersion() {
