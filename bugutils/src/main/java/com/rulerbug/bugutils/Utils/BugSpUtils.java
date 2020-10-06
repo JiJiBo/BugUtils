@@ -25,6 +25,26 @@ public class BugSpUtils {
                 BugApp.getContext().MODE_PRIVATE);
         sp.edit().putInt(key, value).commit();
     }
+    /**
+     * @param key 根据此节点找值
+     * @param def 默认值
+     * @return 返回储存的值
+     */
+    public static float getSpFloat(String key, float def) {
+        SharedPreferences sp = BugApp.getContext().getSharedPreferences(SPFILENAME,
+                BugApp.getContext().MODE_PRIVATE);
+        return sp.getFloat(key, def);
+    }
+
+    /**
+     * @param key   数据所在节点名
+     * @param value 保存的值
+     */
+    public static void putSpFloat(String key, float value) {
+        SharedPreferences sp = BugApp.getContext().getSharedPreferences(SPFILENAME,
+                BugApp.getContext().MODE_PRIVATE);
+        sp.edit().putFloat(key, value).commit();
+    }
 
     /**
      * @param key 根据此节点找值
@@ -68,6 +88,27 @@ public class BugSpUtils {
         SharedPreferences sp = BugApp.getContext().getSharedPreferences(SPFILENAME,
                 BugApp.getContext().MODE_PRIVATE);
         sp.edit().putBoolean(key, value).commit();
+    }    /**
+     * @param key 根据此节点找值
+     * @param def 默认值
+     * @return 返回储存的值
+     */
+    public static long getSpLong(String key,
+
+                                    long def) {
+        SharedPreferences sp = BugApp.getContext().getSharedPreferences(SPFILENAME,
+                BugApp.getContext().MODE_PRIVATE);
+        return sp.getLong(key, def);
+    }
+
+    /**
+     * @param key   数据所在节点名
+     * @param value 保存的值
+     */
+    public static void putSpLong(String key, long value) {
+        SharedPreferences sp = BugApp.getContext().getSharedPreferences(SPFILENAME,
+                BugApp.getContext().MODE_PRIVATE);
+        sp.edit().putLong(key, value).commit();
     }
 
     /**
