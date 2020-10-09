@@ -145,7 +145,7 @@ public class BugPhoneUtils {
      * @param
      * @return
      */
-
+//    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     public static boolean isNetwork() {
         // 获取手机所有连接管理对象（包括对wi-fi,net等连接的管理）
         ConnectivityManager connectivityManager = (ConnectivityManager) BugApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
