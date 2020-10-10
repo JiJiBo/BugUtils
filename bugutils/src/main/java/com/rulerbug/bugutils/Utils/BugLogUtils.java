@@ -1,7 +1,10 @@
 package com.rulerbug.bugutils.Utils;
 
 import android.util.Log;
+
 import com.google.gson.Gson;
+
+import java.io.File;
 
 public class BugLogUtils {
     public static final int v = 10;
@@ -10,12 +13,12 @@ public class BugLogUtils {
     public static final int w = 13;
     public static final int e = 14;
     public static final int NULL = 20;
-
+    public static String flagPath;
 
     public static int level = v;
 
     public static void v(String msg) {
-        if (level <= v) {
+        if (level <= v||isHaveFlag()) {
             Log.e("一条v级message", msg);
         }
     }
@@ -29,7 +32,7 @@ public class BugLogUtils {
     }
 
     public static void d(String msg) {
-        if (level <= d) {
+        if (level <= d||isHaveFlag()) {
             Log.e("一条d级message", msg);
         }
     }
@@ -39,7 +42,7 @@ public class BugLogUtils {
     }
 
     public static void i(String msg) {
-        if (level <= i) {
+        if (level <= i||isHaveFlag()) {
             Log.e("一条i级message", msg);
         }
     }
@@ -49,7 +52,7 @@ public class BugLogUtils {
     }
 
     public static void w(String msg) {
-        if (level <= w) {
+        if (level <= w||isHaveFlag()) {
             Log.e("一条v级message", msg);
         }
     }
@@ -59,7 +62,7 @@ public class BugLogUtils {
     }
 
     public static void e(String msg) {
-        if (level <= e) {
+        if (level <= e||isHaveFlag()) {
             Log.e("一条e级message", msg);
         }
     }
@@ -68,4 +71,11 @@ public class BugLogUtils {
         e(new Gson().toJson(msg));
     }
 
+    public static boolean isHaveFlag() {
+        return new File(flagPath).exists();
+    }
+
+    public static void setFlagPath(String flagPath) {
+        BugLogUtils.flagPath = flagPath;
+    }
 }
