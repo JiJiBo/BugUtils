@@ -20,13 +20,19 @@ public class BugToastUtils {
     }
 
     private void show(String msg, int durition) {
-        if (toast == null) {
-            toast = Toast.makeText(BugApp.getContext(), msg, durition);
-        } else {
-            toast.setText(msg);
-            toast.setDuration(durition);
-        }
-        toast.show();
+        BugThreadUtils.RunOnUIThread(new Runnable() {
+            @Override
+            public void run() {
+                if (toast == null) {
+                    toast = Toast.makeText(BugApp.getContext(), msg, durition);
+                } else {
+                    toast.setText(msg);
+                    toast.setDuration(durition);
+                }
+                toast.show();
+            }
+        });
+
     }
 
     public void showShort(String msg) {
