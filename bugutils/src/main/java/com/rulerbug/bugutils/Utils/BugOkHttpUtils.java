@@ -122,7 +122,7 @@ public class BugOkHttpUtils {
             client.newCall(request).enqueue(callbcak);
         } catch (Exception e) {
             e.printStackTrace();
-            callbcak.onFailure(null, new IOException());
+            callbcak.onFailure(null, new IOException(e.getMessage()));
         }
     }
 
@@ -179,7 +179,7 @@ public class BugOkHttpUtils {
             client.newCall(request).enqueue(callbcak);
         } catch (Exception e) {
             e.printStackTrace();
-            callbcak.onFailure(null,new IOException(""));
+            callbcak.onFailure(null,new IOException(e.getMessage()));
         }
     }
 
@@ -218,7 +218,7 @@ public class BugOkHttpUtils {
             client.newCall(request).enqueue(callbcak);
         } catch (Exception e) {
             e.printStackTrace();
-            callbcak.onFailure(null,new IOException(""));
+            callbcak.onFailure(null,new IOException(e.getMessage()));
         }
     }
 
@@ -263,7 +263,7 @@ public class BugOkHttpUtils {
             client.newCall(request).enqueue(callbcak);
         } catch (Exception e) {
             e.printStackTrace();
-            callbcak.onFailure(null,new IOException(""));
+            callbcak.onFailure(null,new IOException(e.getMessage()));
         }
     }
 
