@@ -7,19 +7,20 @@ import com.google.gson.Gson;
 import java.io.File;
 
 public class BugLogUtils {
+    public static String flagPath;
     public static final int v = 10;
     public static final int d = 11;
     public static final int i = 12;
     public static final int w = 13;
     public static final int e = 14;
     public static final int NULL = 20;
+    public static int level = v;
     public static boolean isHaveFile = isHaveFlag();
-    public static String flagPath;
     private static final String TOP_BORDER = "╔═══════════════════════════════════════════════════════════════════════════════════════════════════";
     private static final String LEFT_BORDER = "║ ";
     private static final String BOTTOM_BORDER = "╚═══════════════════════════════════════════════════════════════════════════════════════════════════";
 
-    public static int level = v;
+
 
     public static void v(String msg) {
         if (level <= v || isHaveFile) {
