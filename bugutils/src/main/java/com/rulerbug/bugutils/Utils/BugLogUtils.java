@@ -33,8 +33,8 @@ public class BugLogUtils {
         v(new Gson().toJson(msg));
     }
 
-    public static void setLevel(int level) {
-        BugLogUtils.level = level;
+    public static void setLevel(int l) {
+        level = l;
     }
 
     public static void d(String msg) {
@@ -89,7 +89,7 @@ public class BugLogUtils {
         return new File(flagPath).exists();
     }
 
-    public static void setFlagPath(String flagPath) {
-        BugLogUtils.flagPath = flagPath;
+    public static void setFlagPath(String f) {
+        flagPath = f;
     }
 }
