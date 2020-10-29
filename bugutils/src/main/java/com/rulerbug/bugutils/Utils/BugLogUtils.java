@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import java.io.File;
 
 public class BugLogUtils {
-    public static String flagPath;
+
     public static final int v = 10;
     public static final int d = 11;
     public static final int i = 12;
@@ -15,10 +15,7 @@ public class BugLogUtils {
     public static final int e = 14;
     public static final int NULL = 20;
     public static int level = v;
-    public static void setFlagPath(String f) {
-        flagPath = f;
-    }
-    public static boolean isHaveFile = isHaveFlag();
+    public static boolean isHaveFile = false;
     private static final String TOP_BORDER = "╔═══════════════════════════════════════════════════════════════════════════════════════════════════";
     private static final String LEFT_BORDER = "║ ";
     private static final String BOTTOM_BORDER = "╚═══════════════════════════════════════════════════════════════════════════════════════════════════";
@@ -87,9 +84,8 @@ public class BugLogUtils {
     public static void e(Object msg) {
         e(new Gson().toJson(msg));
     }
-
-    public static boolean isHaveFlag() {
-        return new File(flagPath).exists();
+    public static void setFlagPath(String f) {
+        isHaveFile = new File(f).exists();
     }
 
 }
