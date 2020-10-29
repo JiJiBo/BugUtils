@@ -15,11 +15,13 @@ public class BugLogUtils {
     public static final int e = 14;
     public static final int NULL = 20;
     public static int level = v;
+    public static void setFlagPath(String f) {
+        flagPath = f;
+    }
     public static boolean isHaveFile = isHaveFlag();
     private static final String TOP_BORDER = "╔═══════════════════════════════════════════════════════════════════════════════════════════════════";
     private static final String LEFT_BORDER = "║ ";
     private static final String BOTTOM_BORDER = "╚═══════════════════════════════════════════════════════════════════════════════════════════════════";
-
 
 
     public static void v(String msg) {
@@ -90,7 +92,4 @@ public class BugLogUtils {
         return new File(flagPath).exists();
     }
 
-    public static void setFlagPath(String f) {
-        flagPath = f;
-    }
 }
