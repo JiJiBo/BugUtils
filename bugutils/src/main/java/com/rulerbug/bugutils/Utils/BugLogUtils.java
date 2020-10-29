@@ -13,6 +13,7 @@ public class BugLogUtils {
     public static final int w = 13;
     public static final int e = 14;
     public static final int NULL = 20;
+    public static boolean isHaveFile = isHaveFlag();
     public static String flagPath;
     private static final String TOP_BORDER = "╔═══════════════════════════════════════════════════════════════════════════════════════════════════";
     private static final String LEFT_BORDER = "║ ";
@@ -21,7 +22,7 @@ public class BugLogUtils {
     public static int level = v;
 
     public static void v(String msg) {
-        if (level <= v || isHaveFlag()) {
+        if (level <= v || isHaveFile) {
             Log.v("bug_msg", TOP_BORDER);
             Log.v("bug_msg", LEFT_BORDER + msg);
             Log.v("bug_msg", BOTTOM_BORDER);
@@ -37,7 +38,7 @@ public class BugLogUtils {
     }
 
     public static void d(String msg) {
-        if (level <= d || isHaveFlag()) {
+        if (level <= d || isHaveFile) {
             Log.d("bug_msg", TOP_BORDER);
             Log.d("bug_msg", LEFT_BORDER + msg);
             Log.d("bug_msg", BOTTOM_BORDER);
@@ -49,7 +50,7 @@ public class BugLogUtils {
     }
 
     public static void i(String msg) {
-        if (level <= i || isHaveFlag()) {
+        if (level <= i || isHaveFile) {
             Log.i("bug_msg", TOP_BORDER);
             Log.i("bug_msg", LEFT_BORDER + msg);
             Log.i("bug_msg", BOTTOM_BORDER);
@@ -61,7 +62,7 @@ public class BugLogUtils {
     }
 
     public static void w(String msg) {
-        if (level <= w || isHaveFlag()) {
+        if (level <= w || isHaveFile) {
             Log.v("bug_msg", TOP_BORDER);
             Log.v("bug_msg", LEFT_BORDER + msg);
             Log.v("bug_msg", BOTTOM_BORDER);
@@ -73,7 +74,7 @@ public class BugLogUtils {
     }
 
     public static void e(String msg) {
-        if (level <= e || isHaveFlag()) {
+        if (level <= e || isHaveFile) {
             Log.e("bug_msg", TOP_BORDER);
             Log.e("bug_msg", LEFT_BORDER + msg);
             Log.e("bug_msg", BOTTOM_BORDER);
