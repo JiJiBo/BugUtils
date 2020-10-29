@@ -14,12 +14,17 @@ public class BugLogUtils {
     public static final int e = 14;
     public static final int NULL = 20;
     public static String flagPath;
+    private static final String TOP_BORDER = "╔═══════════════════════════════════════════════════════════════════════════════════════════════════";
+    private static final String LEFT_BORDER = "║ ";
+    private static final String BOTTOM_BORDER = "╚═══════════════════════════════════════════════════════════════════════════════════════════════════";
 
     public static int level = v;
 
     public static void v(String msg) {
-        if (level <= v||isHaveFlag()) {
-            Log.e("一条v级message", msg);
+        if (level <= v || isHaveFlag()) {
+            Log.v("bug_msg", TOP_BORDER);
+            Log.v("bug_msg", LEFT_BORDER + msg);
+            Log.v("bug_msg", BOTTOM_BORDER);
         }
     }
 
@@ -32,8 +37,10 @@ public class BugLogUtils {
     }
 
     public static void d(String msg) {
-        if (level <= d||isHaveFlag()) {
-            Log.e("一条d级message", msg);
+        if (level <= d || isHaveFlag()) {
+            Log.d("bug_msg", TOP_BORDER);
+            Log.d("bug_msg", LEFT_BORDER + msg);
+            Log.d("bug_msg", BOTTOM_BORDER);
         }
     }
 
@@ -42,8 +49,10 @@ public class BugLogUtils {
     }
 
     public static void i(String msg) {
-        if (level <= i||isHaveFlag()) {
-            Log.e("一条i级message", msg);
+        if (level <= i || isHaveFlag()) {
+            Log.i("bug_msg", TOP_BORDER);
+            Log.i("bug_msg", LEFT_BORDER + msg);
+            Log.i("bug_msg", BOTTOM_BORDER);
         }
     }
 
@@ -52,8 +61,10 @@ public class BugLogUtils {
     }
 
     public static void w(String msg) {
-        if (level <= w||isHaveFlag()) {
-            Log.e("一条v级message", msg);
+        if (level <= w || isHaveFlag()) {
+            Log.v("bug_msg", TOP_BORDER);
+            Log.v("bug_msg", LEFT_BORDER + msg);
+            Log.v("bug_msg", BOTTOM_BORDER);
         }
     }
 
@@ -62,8 +73,10 @@ public class BugLogUtils {
     }
 
     public static void e(String msg) {
-        if (level <= e||isHaveFlag()) {
-            Log.e("一条e级message", msg);
+        if (level <= e || isHaveFlag()) {
+            Log.e("bug_msg", TOP_BORDER);
+            Log.e("bug_msg", LEFT_BORDER + msg);
+            Log.e("bug_msg", BOTTOM_BORDER);
         }
     }
 
