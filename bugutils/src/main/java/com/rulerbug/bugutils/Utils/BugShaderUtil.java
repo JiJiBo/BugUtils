@@ -1,6 +1,5 @@
 package com.rulerbug.bugutils.Utils;
 
-import android.content.Context;
 import android.opengl.GLES20;
 
 import java.io.BufferedReader;
@@ -9,8 +8,8 @@ import java.io.InputStreamReader;
 public class BugShaderUtil {
 
 
-    public static String readRawTxt(Context context, int rawId) {
-        java.io.InputStream inputStream = context.getResources().openRawResource(rawId);
+    public static String readRawTxt( int rawId) {
+        java.io.InputStream inputStream = BugApp.getContext().getResources().openRawResource(rawId);
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
         StringBuffer sb = new StringBuffer();
         String line;
