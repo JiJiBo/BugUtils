@@ -32,7 +32,7 @@ public class BugLogUtils {
     }
 
     public static void v(Object msg) {
-        v(new Gson().toJson(msg));
+        v(new Gson().toJson(msg),"");
     }
 
     public static void setLevel(int l) {
@@ -50,7 +50,7 @@ public class BugLogUtils {
     }
 
     public static void d(Object msg) {
-        d(new Gson().toJson(msg));
+        d(new Gson().toJson(msg),"");
     }
 
     public static void i(String... msgs) {
@@ -64,7 +64,7 @@ public class BugLogUtils {
     }
 
     public static void i(Object msg) {
-        i(new Gson().toJson(msg));
+        i(new Gson().toJson(msg),"");
     }
 
     public static void w(String... msgs) {
@@ -78,7 +78,7 @@ public class BugLogUtils {
     }
 
     public static void w(Object msg) {
-        w(new Gson().toJson(msg));
+        w(new Gson().toJson(msg),"");
     }
 
     public static void e(String... msgs) {
@@ -92,7 +92,7 @@ public class BugLogUtils {
     }
 
     public static void e(Object msg) {
-        e(new Gson().toJson(msg));
+        e(new Gson().toJson(msg),"");
     }
     public static void setFlagPath(String f) {
         isHaveFile = new File(f).exists();
