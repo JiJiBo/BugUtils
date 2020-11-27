@@ -1,4 +1,4 @@
-package com.rulerbug.bugutils.View.swipedelete;
+package com.rulerbug.bugutils.view.swipedelete;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -1,4 +1,4 @@
-package com.rulerbug.bugutils.View;
+package com.rulerbug.bugutils.view;
 
 import android.content.Context;
 import android.content.res.Resources;

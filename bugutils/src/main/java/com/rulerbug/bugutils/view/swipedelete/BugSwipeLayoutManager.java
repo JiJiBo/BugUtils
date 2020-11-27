@@ -1,4 +1,4 @@
-package com.rulerbug.bugutils.View.swipedelete;
+package com.rulerbug.bugutils.view.swipedelete;
 
 public class BugSwipeLayoutManager {
 	private BugSwipeLayoutManager(){}
