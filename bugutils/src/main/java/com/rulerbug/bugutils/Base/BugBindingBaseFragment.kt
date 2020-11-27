@@ -8,12 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-/**
- * 公司：江苏再出发网络科技有限公司
- * 作者：Android 倪震宇
- * 创建时间：2020/11/27
- * 功能描述：
- */
 abstract class BugBindingBaseFragment<DATA_BINDING : ViewDataBinding> : Fragment() {
     var parent: ViewGroup? = null
     var mView: View? = null
@@ -26,7 +20,16 @@ abstract class BugBindingBaseFragment<DATA_BINDING : ViewDataBinding> : Fragment
         if (this.mView == null) {
             this.mView = inflater.inflate(layoutId, null as ViewGroup?)
         }
-        parent = this.mView!!.parent as ViewGroup
+
+
+
+        if (this.mView != null) {
+            val p = this.mView!!.parent
+            if (p != null) {
+                parent = p as ViewGroup
+            }
+        }
+
         if (parent != null) {
             parent!!.removeView(this.mView)
         }
