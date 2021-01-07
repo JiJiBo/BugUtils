@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class BugOkHttpUtils {
-    private static long CONNECT_TIMEOUT = 1L;
-    private static long READ_TIMEOUT = 1L;
-    private static long WRITE_TIMEOUT = 1L;
+    private static long CONNECT_TIMEOUT = 60*60*24L;
+    private static long READ_TIMEOUT = 60*60*24L;
+    private static long WRITE_TIMEOUT = 60*60*24L;
 
     /**
      * @param url 网住
