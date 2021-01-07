@@ -10,8 +10,13 @@ import okhttp3.*;
 import java.io.*;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BugOkHttpUtils {
+    private static long CONNECT_TIMEOUT = 1L;
+    private static long READ_TIMEOUT = 1L;
+    private static long WRITE_TIMEOUT = 1L;
+
     /**
      * @param url 网住
      * @return 输入流
@@ -19,6 +24,9 @@ public class BugOkHttpUtils {
     public static InputStream getInputStrem(String url) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .build();
@@ -38,6 +46,9 @@ public class BugOkHttpUtils {
     public static File getFile(String url, String path) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .build();
@@ -70,6 +81,9 @@ public class BugOkHttpUtils {
     public static File postFile(String url, FormBody body, String path) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url).post(body)
                     .build();
@@ -98,6 +112,9 @@ public class BugOkHttpUtils {
     public static String getString(String url) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .build();
@@ -116,6 +133,9 @@ public class BugOkHttpUtils {
     public static void getString(String url, Callback callbcak) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .build();
@@ -133,6 +153,9 @@ public class BugOkHttpUtils {
     public static Response getHttp(String url) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .build();
@@ -152,6 +175,9 @@ public class BugOkHttpUtils {
     public static Response postHttp(String url, FormBody body) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(body)
@@ -172,6 +198,9 @@ public class BugOkHttpUtils {
     public static void postHttp(String url, FormBody body, Callback callbcak) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(body)
@@ -179,7 +208,7 @@ public class BugOkHttpUtils {
             client.newCall(request).enqueue(callbcak);
         } catch (Exception e) {
             e.printStackTrace();
-            callbcak.onFailure(null,new IOException(e.getMessage()));
+            callbcak.onFailure(null, new IOException(e.getMessage()));
         }
     }
 
@@ -191,6 +220,9 @@ public class BugOkHttpUtils {
     public static String postString(String url, FormBody body) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(body)
@@ -211,6 +243,9 @@ public class BugOkHttpUtils {
     public static void postString(String url, FormBody body, Callback callbcak) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(body)
@@ -218,7 +253,7 @@ public class BugOkHttpUtils {
             client.newCall(request).enqueue(callbcak);
         } catch (Exception e) {
             e.printStackTrace();
-            callbcak.onFailure(null,new IOException(e.getMessage()));
+            callbcak.onFailure(null, new IOException(e.getMessage()));
         }
     }
 
@@ -230,11 +265,15 @@ public class BugOkHttpUtils {
     public static String postString(String url, HashMap<String, String> paramsMap) {
         try {
             FormBody.Builder builder = new FormBody.Builder();
+
             for (String key : paramsMap.keySet()) {
                 builder.add(key, paramsMap.get(key));
             }
             RequestBody formBody = builder.build();
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(formBody)
@@ -256,6 +295,9 @@ public class BugOkHttpUtils {
     public static void postFile(String url, MultipartBody body, Callback callbcak) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(body)
@@ -263,7 +305,7 @@ public class BugOkHttpUtils {
             client.newCall(request).enqueue(callbcak);
         } catch (Exception e) {
             e.printStackTrace();
-            callbcak.onFailure(null,new IOException(e.getMessage()));
+            callbcak.onFailure(null, new IOException(e.getMessage()));
         }
     }
 
@@ -275,6 +317,9 @@ public class BugOkHttpUtils {
     public static Response postFile(String url, MultipartBody body) {
         try {
             OkHttpClient client = new OkHttpClient();
+            client = client.newBuilder().connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS).build();
             Request request = new Request.Builder()
                     .url(url)
                     .post(body)
