@@ -21,79 +21,63 @@ public class BugLogUtils {
     private static final String BOTTOM_BORDER = "╚═══════════════════════════════════════════════════════════════════════════════════════════════════";
 
 
-    public static void v(String... msgs) {
+    public static void v(Object... msgs) {
         if (level <= v || isHaveFile) {
             Log.v("bug_msg", TOP_BORDER);
-            for (String msg : msgs) {
-                Log.v("bug_msg", LEFT_BORDER + msg);
+            for (Object msg : msgs) {
+                Log.v("bug_msg", LEFT_BORDER + new Gson().toJson(msg));
             }
             Log.v("bug_msg", BOTTOM_BORDER);
         }
     }
 
-    public static void v(Object msg) {
-        v(new Gson().toJson(msg),"");
-    }
 
     public static void setLevel(int l) {
         level = l;
     }
 
-    public static void d(String... msgs) {
+    public static void d(Object... msgs) {
         if (level <= d || isHaveFile) {
             Log.d("bug_msg", TOP_BORDER);
-            for (String msg : msgs) {
-                Log.d("bug_msg", LEFT_BORDER + msg);
+            for (Object msg : msgs) {
+                Log.d("bug_msg", LEFT_BORDER + new Gson().toJson(msg));
             }
             Log.d("bug_msg", BOTTOM_BORDER);
         }
     }
 
-    public static void d(Object msg) {
-        d(new Gson().toJson(msg),"");
-    }
 
-    public static void i(String... msgs) {
+    public static void i(Object... msgs) {
         if (level <= i || isHaveFile) {
             Log.i("bug_msg", TOP_BORDER);
-            for (String msg : msgs) {
-                Log.i("bug_msg", LEFT_BORDER + msg);
+            for (Object msg : msgs) {
+                Log.i("bug_msg", LEFT_BORDER + new Gson().toJson(msg));
             }
             Log.i("bug_msg", BOTTOM_BORDER);
         }
     }
 
-    public static void i(Object msg) {
-        i(new Gson().toJson(msg),"");
-    }
 
-    public static void w(String... msgs) {
+    public static void w(Object... msgs) {
         if (level <= w || isHaveFile) {
             Log.v("bug_msg", TOP_BORDER);
-            for (String msg : msgs) {
-                Log.v("bug_msg", LEFT_BORDER + msg);
+            for (Object msg : msgs) {
+                Log.v("bug_msg", LEFT_BORDER + new Gson().toJson(msg));
             }
             Log.v("bug_msg", BOTTOM_BORDER);
         }
     }
 
-    public static void w(Object msg) {
-        w(new Gson().toJson(msg),"");
-    }
-
-    public static void e(String... msgs) {
+    public static void e(Object... msgs) {
         if (level <= e || isHaveFile) {
             Log.e("bug_msg", TOP_BORDER);
-            for (String msg : msgs) {
-                Log.e("bug_msg", LEFT_BORDER + msg);
+            for (Object msg : msgs) {
+                Log.e("bug_msg", LEFT_BORDER + new Gson().toJson(msg));
             }
             Log.e("bug_msg", BOTTOM_BORDER);
         }
     }
 
-    public static void e(Object msg) {
-        e(new Gson().toJson(msg),"");
-    }
     public static void setFlagPath(String f) {
         isHaveFile = new File(f).exists();
     }

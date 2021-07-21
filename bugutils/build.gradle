@@ -38,14 +38,23 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    api 'androidx.constraintlayout:constraintlayout:2.0.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation "androidx.core:core-ktx:+"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'com.google.code.gson:gson:2.8.6'
+    api "androidx.core:core-ktx:+"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //image cache
+    api "com.github.bumptech.glide:glide:4.12.0"
+
+    api "com.github.bumptech.glide:okhttp3-integration:4.11.0"
+    api 'org.greenrobot:eventbus:3.1.1'
+    //富文本
+    api 'com.zzhoujay.richtext:richtext:3.0.8'
+    api 'com.zzhoujay:html:1.0.2'
+    api 'com.github.xuexiangjys:XUI:1.1.7'
 }
 repositories {
     mavenCentral()
