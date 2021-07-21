@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.flexbox.FlexboxLayoutManager;
-import com.nas.nasbaselibrary.config.GlideRoundTransform;
+
 import com.rulerbug.bugutils.Utils.BugApp;
 
 public class RvAdapter {
@@ -43,7 +43,7 @@ public class RvAdapter {
 
     @BindingAdapter(value = {"bind3GRv"})
     public static void bind3GRv(RecyclerView rv, Object o) {
-        ;
+        rv.setLayoutManager(new GridLayoutManager(rv.getContext(), 3));
 
     }
 
