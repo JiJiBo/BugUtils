@@ -1,4 +1,4 @@
-package com.rulerbug.bugutils.view.SlideDelete;
+package com.rulerbug.bugutils.view.slideDelete;
 
 public class BugSlideDeleteManager {
     public BugSlideDelete hadOpen ;

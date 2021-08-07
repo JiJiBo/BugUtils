@@ -1,4 +1,4 @@
-package com.rulerbug.bugutils.view.SlideDelete;
+package com.rulerbug.bugutils.view.slideDelete;
 
 import android.content.Context;
 import android.util.AttributeSet;

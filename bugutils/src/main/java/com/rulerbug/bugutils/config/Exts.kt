@@ -321,3 +321,15 @@ fun Long.toTimeByLong(reg: String): String? {
 fun Int.toTimeByShort(reg: String): String? {
     return BugTimeUtils.LongTimeToStringTime(this * 1000L, reg)
 }
+fun Double.add(num: Double): Double {
+    return BugBigNumberUtils.add(this, num)
+}
+fun Float.add(num: Float): Double {
+    return BugBigNumberUtils.add(this, num)
+}
+fun Double.reduce(num: Double): Double {
+    return BugBigNumberUtils.reduce(this, num)
+}
+fun Float.reduce(num: Float): Double {
+    return BugBigNumberUtils.reduce(this, num)
+}
