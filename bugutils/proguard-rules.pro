@@ -63,6 +63,8 @@
 -keep class com.google.** {*;}
 -keep class com.github.** {*;}
 -keep class com.rulerbug.** {*;}
+-keep class com.pinyue.** {*;}
+-keep class com.** {*;}
 
 # 保留继承的
 -keep public class * extends aandroidx.**
