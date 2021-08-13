@@ -1,4 +1,4 @@
-package com.rulerbug.bugutils.Domain;
+package com.rulerbug.bugutils.domain;
 
 public class SmartTime {
     public String DES;

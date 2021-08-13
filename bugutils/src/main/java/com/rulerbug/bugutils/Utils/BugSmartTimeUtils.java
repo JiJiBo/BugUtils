@@ -1,6 +1,6 @@
 package com.rulerbug.bugutils.Utils;
 
-import com.rulerbug.bugutils.Domain.SmartTime;
+import com.rulerbug.bugutils.domain.SmartTime;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

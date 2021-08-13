@@ -1,4 +1,4 @@
-package com.rulerbug.bugutils.Domain;
+package com.rulerbug.bugutils.domain;
 
 import java.util.Timer;
 import java.util.TimerTask;

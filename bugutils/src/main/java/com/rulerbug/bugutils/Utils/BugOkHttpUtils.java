@@ -1,9 +1,9 @@
 package com.rulerbug.bugutils.Utils;
 
-import com.rulerbug.bugutils.Domain.BugOkHttpDataBean;
-import com.rulerbug.bugutils.Domain.BugOkHttpDataList;
-import com.rulerbug.bugutils.Domain.BugOkHttpFileBean;
-import com.rulerbug.bugutils.Domain.BugOkHttpFileList;
+import com.rulerbug.bugutils.domain.BugOkHttpDataBean;
+import com.rulerbug.bugutils.domain.BugOkHttpDataList;
+import com.rulerbug.bugutils.domain.BugOkHttpFileBean;
+import com.rulerbug.bugutils.domain.BugOkHttpFileList;
 
 import okhttp3.*;
 

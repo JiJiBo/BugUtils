@@ -1,6 +1,5 @@
 package com.rulerbug.bugutils.Utils;
 
-import android.graphics.Typeface;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;

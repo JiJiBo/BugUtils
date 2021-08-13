@@ -1,7 +1,6 @@
 package com.nas.nasbaselibrary
 
 import android.app.Activity
-import android.os.Bundle
 import android.text.TextUtils
 import android.view.Gravity
 import android.widget.ImageView
