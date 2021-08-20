@@ -1,4 +1,4 @@
-package com.zh.swipebacklib;
+package com.rulerbug.bugutils.swipebacklib;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.zh.swipebacklib.tools.Util;
+import com.rulerbug.bugutils.swipebacklib.tools.Util;
 
 /**
  * Created by zh on 2018/10/19.

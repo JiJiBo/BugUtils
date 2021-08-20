@@ -1,4 +1,4 @@
-package com.zh.swipebacklib;
+package com.rulerbug.bugutils.swipebacklib;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -25,7 +25,7 @@ import androidx.core.view.MotionEventCompat;
 import androidx.core.view.ViewCompat;
 import androidx.customview.widget.ViewDragHelper;
 
-import com.zh.swipebacklib.tools.Util;
+import com.rulerbug.bugutils.swipebacklib.tools.Util;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
@@ -104,12 +104,12 @@ public class SwipeBackLayout extends FrameLayout {
     }
 
     private void init(@NonNull Context context, @Nullable AttributeSet attrs) {
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SwipeBackLayout);
-        setDirectionMode(a.getInt(R.styleable.SwipeBackLayout_directionMode, mDirectionMode));
-        setSwipeBackFactor(a.getFloat(R.styleable.SwipeBackLayout_swipeBackFactor, swipeBackFactor));
-        setMaskAlpha(a.getInteger(R.styleable.SwipeBackLayout_maskAlpha, maskAlpha));
-        isSwipeFromEdge = a.getBoolean(R.styleable.SwipeBackLayout_isSwipeFromEdge, isSwipeFromEdge);
-        setShadow(R.drawable.shadow_left);
+        TypedArray a = context.obtainStyledAttributes(attrs, com.rulerbug.swipebacklib.R.styleable.SwipeBackLayout);
+        setDirectionMode(a.getInt(com.rulerbug.swipebacklib.R.styleable.SwipeBackLayout_directionMode, mDirectionMode));
+        setSwipeBackFactor(a.getFloat(com.rulerbug.swipebacklib.R.styleable.SwipeBackLayout_swipeBackFactor, swipeBackFactor));
+        setMaskAlpha(a.getInteger(com.rulerbug.swipebacklib.R.styleable.SwipeBackLayout_maskAlpha, maskAlpha));
+        isSwipeFromEdge = a.getBoolean(com.rulerbug.swipebacklib.R.styleable.SwipeBackLayout_isSwipeFromEdge, isSwipeFromEdge);
+        setShadow(com.rulerbug.swipebacklib.R.drawable.shadow_left);
         a.recycle();
     }
 

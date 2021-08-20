@@ -2,9 +2,9 @@ package com.rulerbug.bugutils.Base;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.rulerbug.bugutils.Utils.BugActivityUtils;
-import com.zh.swipebacklib.BaseSwipeBackActivity;
+import com.rulerbug.bugutils.swipebacklib.BaseSwipeBackActivity;
 
 public class BugBaseAppCompatActivity extends BaseSwipeBackActivity {
     @Override

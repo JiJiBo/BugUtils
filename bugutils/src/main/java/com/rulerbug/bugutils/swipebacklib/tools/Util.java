@@ -1,4 +1,4 @@
-package com.zh.swipebacklib.tools;
+package com.rulerbug.bugutils.swipebacklib.tools;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
