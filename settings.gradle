@@ -1,1 +1,1 @@
-include ':app', ':bugutils'
+include ':app', ':bugutils', ':swipebacklib'

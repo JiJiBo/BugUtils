@@ -4,8 +4,9 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.rulerbug.bugutils.Utils.BugActivityUtils;
+import com.zh.swipebacklib.BaseSwipeBackActivity;
 
-public class BugBaseAppCompatActivity extends AppCompatActivity {
+public class BugBaseAppCompatActivity extends BaseSwipeBackActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
