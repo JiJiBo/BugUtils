@@ -6,6 +6,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.rulerbug.bugutils.R;
+
 /**
  * @author zh
  */
@@ -22,7 +24,7 @@ public class SwipeBackActivityHelper {
         mActivity.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mActivity.getWindow().getDecorView().setBackgroundDrawable(null);
         mSwipeBackLayout = (SwipeBackLayout) LayoutInflater.from(mActivity).inflate(
-               com.rulerbug.swipebacklib.R.layout.swipeback_layout, null);
+             R.layout.swipeback_layout, null);
         mSwipeBackLayout.finishAnim = isAnim;
     }
 
