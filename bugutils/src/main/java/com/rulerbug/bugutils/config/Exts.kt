@@ -1,4 +1,4 @@
-package com.nas.nasbaselibrary
+package com.rulerbug.bugutils.config
 
 import android.app.Activity
 import android.text.TextUtils
