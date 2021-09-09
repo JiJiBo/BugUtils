@@ -3,15 +3,14 @@ package com.rulerbug.bugutils.Utils;
 import java.io.InputStream;
 
 public class BugStringUtils {
-    public static String Is2String(InputStream is) {
-        StringBuffer sb = new StringBuffer();
-        int len = 0;
-        byte[] buf = new byte[1024];
+    public static String Is2String(InputStream in) {
+
         try {
-            while ((len = is.read(buf)) != -1) {
-                sb.append(new String(buf, 0, len));
-            }
-            return sb.toString();
+            int size = in.available();//取得数据流的数据大小
+            byte[] buffer = new byte[size];
+            in.read(buffer);
+            in.close();
+            return new String(buffer);
         } catch (Exception e) {
             e.printStackTrace();
         }
