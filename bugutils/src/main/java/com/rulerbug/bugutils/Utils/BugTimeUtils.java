@@ -13,7 +13,47 @@ public class BugTimeUtils {
     public static final String DATA_FORMATE_5 = "yyyy-MM-dd";
     public static final String DATA_FORMATE_6 = "yyyy MM dd hh:mm:ss";
     public static final String DATA_FORMATE_7 = "yyyy-MM-dd hh:mm:ss";
+    /**
+     * 将timeMillis格式化
+     * 低于一分钟   "43秒"
+     * 低于一小时   "26分钟43秒"
+     * 其他          "60小时26分钟43秒"
+     *
+     * @param timeMillis 时间 毫秒级
+     * @return
+     */
+    public static String hourFormatChs(long timeMillis) {
+        int timeSecond = (int) (timeMillis / 1000);
+        int hour = 60 * 60;
+        int minute = 60;
+        int hs = timeSecond / hour;
+        int ms = timeSecond % hour / minute;
+        int ss = timeSecond % hour % minute;
+        StringBuilder ret = new StringBuilder();
+        if (0 != hs) ret.append(hs).append("时");
+        if (0 != ms) ret.append(ms).append("分");
+        ret.append(ss).append("秒");
+        return ret.toString();
+    }
 
+    /**
+     * 将timeMillis格式化
+     * 低于一分钟   "43秒"
+     * 其他   "126分钟43秒"
+     *
+     * @param timeMillis 时间 毫秒级
+     * @return
+     */
+    public static String minuteFormatChs(long timeMillis) {
+        int timeSecond = (int) (timeMillis / 1000);
+        int minute = 60;
+        int ms = timeSecond / minute;
+        int ss = timeSecond % minute;
+        StringBuilder ret = new StringBuilder();
+        if (0 != ms) ret.append(ms).append("分");
+        ret.append(ss).append("秒");
+        return ret.toString();
+    }
     public static String getCurrentTimrString() {
         String reg = "yyyy年MM月dd日";
         return getCurrentTimrString(reg);
