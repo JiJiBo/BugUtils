@@ -69,7 +69,7 @@ public class BugContactUtils {
         return contacts;
     }
 
-    static class MyContacts {
+    public static class MyContacts {
         public String name;
         public String phone;
         public String note;
